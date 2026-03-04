@@ -1,0 +1,586 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Merch Mockup Maker</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <h1 class="title">
+                    <span class="gradient-text">AI Merch</span>
+                    <span class="normal-text">Mockup Maker</span>
+                </h1>
+                <p class="subtitle">Generate realistic product mockups instantly with AI</p>
+            </div>
+        </header>
+
+        <main class="main">
+            <div class="creator-panel">
+                <div class="form-section">
+                    <h2>Create Your Mockup</h2>
+                    
+                    <div class="form-group">
+                        <label for="product-type">Product Type</label>
+                        <select id="product-type" class="select-input">
+                            <option value="">Select a product...</option>
+                            <optgroup label="🎨 Custom Kits">
+                                <option value="custom-kit">🎨 Custom Kit (Select Your Own Items)</option>
+                            </optgroup>
+                            <optgroup label="Full Kits (Multiple Items)">
+                                <option value="starter-kit">Starter Kit (T-shirt, Mug, Sticker)</option>
+                                <option value="apparel-kit">Apparel Kit (T-shirt, Hoodie, Hat, Tote Bag)</option>
+                                <option value="office-kit">Office Kit (Mug, Notebook, Mousepad, Pen)</option>
+                                <option value="lifestyle-kit">Lifestyle Kit (Water Bottle, T-shirt, Phone Case, Keychain)</option>
+                                <option value="premium-kit">Premium Kit (Hoodie, Mug, Poster, Sticker Pack)</option>
+                                <option value="tech-kit">Tech Kit (Laptop Skin, Phone Case, Mousepad, Cable Organizer)</option>
+                                <option value="outdoor-kit">Outdoor Kit (Water Bottle, Cap, Backpack, Patch)</option>
+                                <option value="cozy-kit">Cozy Kit (Blanket, Mug, Pillow, Candle)</option>
+                                <option value="student-kit">Student Kit (Notebook, Pen, Stickers, Tote Bag)</option>
+                                <option value="complete-kit">Complete Kit (T-shirt, Hoodie, Mug, Sticker, Phone Case, Tote Bag)</option>
+                                <option value="fitness-kit">Fitness Kit (Water Bottle, Towel, T-shirt, Wristband)</option>
+                                <option value="travel-kit">Travel Kit (Passport Holder, Luggage Tag, Travel Mug, Neck Pillow)</option>
+                                <option value="gamer-kit">Gamer Kit (Mousepad, Phone Case, Sticker, Energy Drink Tumbler)</option>
+                                <option value="artist-kit">Artist Kit (Notebook, Pen, Tote Bag, Sticker Pack)</option>
+                                <option value="coffee-lover-kit">Coffee Lover Kit (Mug, Travel Mug, Coaster, Coffee Beans Pouch)</option>
+                                <option value="eco-friendly-kit">Eco-Friendly Kit (Reusable Water Bottle, Tote Bag, Bamboo Pen, Sticker)</option>
+                                <option value="professional-kit">Professional Kit (Business Card Holder, Notebook, Pen, Mousepad)</option>
+                                <option value="party-kit">Party Kit (Shot Glasses, Coasters, Napkins, Party Favors)</option>
+                                <option value="pet-lover-kit">Pet Lover Kit (Pet Bowl, Pet Toy, T-shirt, Car Decal)</option>
+                                <option value="music-kit">Music Kit (Phone Case, Sticker Pack, Poster, Tote Bag)</option>
+                            </optgroup>
+                            <optgroup label="Apparel">
+                                <option value="t-shirt">T-Shirt</option>
+                                <option value="hoodie">Hoodie</option>
+                                <option value="sweatshirt">Sweatshirt</option>
+                                <option value="tank-top">Tank Top</option>
+                                <option value="long-sleeve">Long Sleeve Shirt</option>
+                                <option value="polo-shirt">Polo Shirt</option>
+                                <option value="baseball-cap">Baseball Cap</option>
+                                <option value="beanie">Beanie</option>
+                                <option value="socks">Socks</option>
+                            </optgroup>
+                            <optgroup label="Bags & Accessories">
+                                <option value="tote-bag">Tote Bag</option>
+                                <option value="backpack">Backpack</option>
+                                <option value="drawstring-bag">Drawstring Bag</option>
+                                <option value="fanny-pack">Fanny Pack</option>
+                                <option value="phone-case">Phone Case</option>
+                                <option value="laptop-skin">Laptop Skin</option>
+                                <option value="keychain">Keychain</option>
+                                <option value="pin">Enamel Pin</option>
+                                <option value="patch">Embroidered Patch</option>
+                            </optgroup>
+                            <optgroup label="Drinkware">
+                                <option value="mug">Coffee Mug</option>
+                                <option value="travel-mug">Travel Mug</option>
+                                <option value="water-bottle">Water Bottle</option>
+                                <option value="tumbler">Tumbler</option>
+                                <option value="wine-glass">Wine Glass</option>
+                            </optgroup>
+                            <optgroup label="Home & Office">
+                                <option value="poster">Poster</option>
+                                <option value="canvas-print">Canvas Print</option>
+                                <option value="framed-print">Framed Print</option>
+                                <option value="pillow">Throw Pillow</option>
+                                <option value="blanket">Blanket</option>
+                                <option value="mousepad">Mouse Pad</option>
+                                <option value="notebook">Notebook</option>
+                                <option value="journal">Journal</option>
+                                <option value="planner">Planner</option>
+                                <option value="bookmark">Bookmark</option>
+                                <option value="greeting-card">Greeting Card</option>
+                                <option value="postcard">Postcard</option>
+                                <option value="calendar">Calendar</option>
+                                <option value="coaster">Coaster Set</option>
+                                <option value="magnet">Refrigerator Magnet</option>
+                                <option value="clock">Wall Clock</option>
+                            </optgroup>
+                            <optgroup label="Stickers & Decals">
+                                <option value="sticker">Vinyl Sticker</option>
+                                <option value="car-decal">Car Decal</option>
+                                <option value="laptop-sticker">Laptop Sticker</option>
+                                <option value="wall-decal">Wall Decal</option>
+                            </optgroup>
+                        </select>
+                    </div>
+
+                    <div id="custom-kit-builder" class="custom-kit-builder" style="display: none;">
+                        <h3>Build Your Custom Kit</h3>
+                        <p>Select up to 10 products for your custom kit:</p>
+                        <div class="custom-kit-grid">
+                            <!-- Apparel -->
+                            <h4 class="kit-category-title">Apparel</h4>
+                            <label class="kit-item-option">
+                                <input type="checkbox" value="t-shirt" class="kit-checkbox">
+                                <span class="kit-item-label">T-Shirt</span>
+                            </label>
+                            <label class="kit-item-option">
+                                <input type="checkbox" value="hoodie" class="kit-checkbox">
+                                <span class="kit-item-label">Hoodie</span>
+                            </label>
+                            <label class="kit-item-option">
+                                <input type="checkbox" value="sweatshirt" class="kit-checkbox">
+                                <span class="kit-item-label">Sweatshirt</span>
+                            </label>
+                            <label class="kit-item-option">
+                                <input type="checkbox" value="tank-top" class="kit-checkbox">
+                                <span class="kit-item-label">Tank Top</span>
+                            </label>
+                            <label class="kit-item-option">
+                                <input type="checkbox" value="long-sleeve" class="kit-checkbox">
+                                <span class="kit-item-label">Long Sleeve</span>
+                            </label>
+                            <label class="kit-item-option">
+                                <input type="checkbox" value="polo-shirt" class="kit-checkbox">
+                                <span class="kit-item-label">Polo Shirt</span>
+                            </label>
+                            <label class="kit-item-option">
+                                <input type="checkbox" value="baseball-cap" class="kit-checkbox">
+                                <span class="kit-item-label">Baseball Cap</span>
+                            </label>
+                            <label class="kit-item-option">
+                                <input type="checkbox" value="beanie" class="kit-checkbox">
+                                <span class="kit-item-label">Beanie</span>
+                            </label>
+                            <label class="kit-item-option">
+                                <input type="checkbox" value="socks" class="kit-checkbox">
+                                <span class="kit-item-label">Socks</span>
+                            </label>
+                            
+                            <!-- Bags & Accessories -->
+                            <h4 class="kit-category-title">Bags & Accessories</h4>
+                            <label class="kit-item-option">
+                                <input type="checkbox" value="tote-bag" class="kit-checkbox">
+                                <span class="kit-item-label">Tote Bag</span>
+                            </label>
+                            <label class="kit-item-option">
+                                <input type="checkbox" value="backpack" class="kit-checkbox">
+                                <span class="kit-item-label">Backpack</span>
+                            </label>
+                            <label class="kit-item-option">
+                                <input type="checkbox" value="drawstring-bag" class="kit-checkbox">
+                                <span class="kit-item-label">Drawstring Bag</span>
+                            </label>
+                            <label class="kit-item-option">
+                                <input type="checkbox" value="fanny-pack" class="kit-checkbox">
+                                <span class="kit-item-label">Fanny Pack</span>
+                            </label>
+                            <label class="kit-item-option">
+                                <input type="checkbox" value="phone-case" class="kit-checkbox">
+                                <span class="kit-item-label">Phone Case</span>
+                            </label>
+                            <label class="kit-item-option">
+                                <input type="checkbox" value="laptop-skin" class="kit-checkbox">
+                                <span class="kit-item-label">Laptop Skin</span>
+                            </label>
+                            <label class="kit-item-option">
+                                <input type="checkbox" value="keychain" class="kit-checkbox">
+                                <span class="kit-item-label">Keychain</span>
+                            </label>
+                            <label class="kit-item-option">
+                                <input type="checkbox" value="pin" class="kit-checkbox">
+                                <span class="kit-item-label">Enamel Pin</span>
+                            </label>
+                            <label class="kit-item-option">
+                                <input type="checkbox" value="patch" class="kit-checkbox">
+                                <span class="kit-item-label">Embroidered Patch</span>
+                            </label>
+                            
+                            <!-- Drinkware -->
+                            <h4 class="kit-category-title">Drinkware</h4>
+                            <label class="kit-item-option">
+                                <input type="checkbox" value="mug" class="kit-checkbox">
+                                <span class="kit-item-label">Coffee Mug</span>
+                            </label>
+                            <label class="kit-item-option">
+                                <input type="checkbox" value="travel-mug" class="kit-checkbox">
+                                <span class="kit-item-label">Travel Mug</span>
+                            </label>
+                            <label class="kit-item-option">
+                                <input type="checkbox" value="water-bottle" class="kit-checkbox">
+                                <span class="kit-item-label">Water Bottle</span>
+                            </label>
+                            <label class="kit-item-option">
+                                <input type="checkbox" value="tumbler" class="kit-checkbox">
+                                <span class="kit-item-label">Tumbler</span>
+                            </label>
+                            <label class="kit-item-option">
+                                <input type="checkbox" value="wine-glass" class="kit-checkbox">
+                                <span class="kit-item-label">Wine Glass</span>
+                            </label>
+                            
+                            <!-- Home & Office -->
+                            <h4 class="kit-category-title">Home & Office</h4>
+                            <label class="kit-item-option">
+                                <input type="checkbox" value="poster" class="kit-checkbox">
+                                <span class="kit-item-label">Poster</span>
+                            </label>
+                            <label class="kit-item-option">
+                                <input type="checkbox" value="canvas-print" class="kit-checkbox">
+                                <span class="kit-item-label">Canvas Print</span>
+                            </label>
+                            <label class="kit-item-option">
+                                <input type="checkbox" value="framed-print" class="kit-checkbox">
+                                <span class="kit-item-label">Framed Print</span>
+                            </label>
+                            <label class="kit-item-option">
+                                <input type="checkbox" value="pillow" class="kit-checkbox">
+                                <span class="kit-item-label">Throw Pillow</span>
+                            </label>
+                            <label class="kit-item-option">
+                                <input type="checkbox" value="blanket" class="kit-checkbox">
+                                <span class="kit-item-label">Blanket</span>
+                            </label>
+                            <label class="kit-item-option">
+                                <input type="checkbox" value="mousepad" class="kit-checkbox">
+                                <span class="kit-item-label">Mouse Pad</span>
+                            </label>
+                            <label class="kit-item-option">
+                                <input type="checkbox" value="notebook" class="kit-checkbox">
+                                <span class="kit-item-label">Notebook</span>
+                            </label>
+                            <label class="kit-item-option">
+                                <input type="checkbox" value="journal" class="kit-checkbox">
+                                <span class="kit-item-label">Journal</span>
+                            </label>
+                            <label class="kit-item-option">
+                                <input type="checkbox" value="planner" class="kit-checkbox">
+                                <span class="kit-item-label">Planner</span>
+                            </label>
+                            <label class="kit-item-option">
+                                <input type="checkbox" value="bookmark" class="kit-checkbox">
+                                <span class="kit-item-label">Bookmark</span>
+                            </label>
+                            <label class="kit-item-option">
+                                <input type="checkbox" value="greeting-card" class="kit-checkbox">
+                                <span class="kit-item-label">Greeting Card</span>
+                            </label>
+                            <label class="kit-item-option">
+                                <input type="checkbox" value="postcard" class="kit-checkbox">
+                                <span class="kit-item-label">Postcard</span>
+                            </label>
+                            <label class="kit-item-option">
+                                <input type="checkbox" value="calendar" class="kit-checkbox">
+                                <span class="kit-item-label">Calendar</span>
+                            </label>
+                            <label class="kit-item-option">
+                                <input type="checkbox" value="coaster" class="kit-checkbox">
+                                <span class="kit-item-label">Coaster Set</span>
+                            </label>
+                            <label class="kit-item-option">
+                                <input type="checkbox" value="magnet" class="kit-checkbox">
+                                <span class="kit-item-label">Refrigerator Magnet</span>
+                            </label>
+                            <label class="kit-item-option">
+                                <input type="checkbox" value="clock" class="kit-checkbox">
+                                <span class="kit-item-label">Wall Clock</span>
+                            </label>
+                            
+                            <!-- Stickers & Decals -->
+                            <h4 class="kit-category-title">Stickers & Decals</h4>
+                            <label class="kit-item-option">
+                                <input type="checkbox" value="sticker" class="kit-checkbox">
+                                <span class="kit-item-label">Vinyl Sticker</span>
+                            </label>
+                            <label class="kit-item-option">
+                                <input type="checkbox" value="car-decal" class="kit-checkbox">
+                                <span class="kit-item-label">Car Decal</span>
+                            </label>
+                            <label class="kit-item-option">
+                                <input type="checkbox" value="laptop-sticker" class="kit-checkbox">
+                                <span class="kit-item-label">Laptop Sticker</span>
+                            </label>
+                            <label class="kit-item-option">
+                                <input type="checkbox" value="wall-decal" class="kit-checkbox">
+                                <span class="kit-item-label">Wall Decal</span>
+                            </label>
+                        </div>
+                        <div class="kit-counter">
+                            <span id="kit-counter-text">0 / 10 items selected</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="design-input">Design Description</label>
+                        <textarea 
+                            id="design-input" 
+                            class="text-input" 
+                            placeholder="Describe your design... (e.g., 'minimalist cat illustration', 'vintage band logo', 'motivational quote in bold letters')"
+                            rows="3"
+                        ></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="style-input">Style & Mood</label>
+                        <select id="style-input" class="select-input">
+                            <option value="">Select style...</option>
+                            <optgroup label="Classic Styles">
+                                <option value="modern minimalist">Modern Minimalist</option>
+                                <option value="vintage retro">Vintage Retro</option>
+                                <option value="elegant professional">Elegant Professional</option>
+                                <option value="classic traditional">Classic Traditional</option>
+                            </optgroup>
+                            <optgroup label="Bold & Expressive">
+                                <option value="bold colorful">Bold & Colorful</option>
+                                <option value="grunge alternative">Grunge Alternative</option>
+                                <option value="street urban">Street & Urban</option>
+                                <option value="punk rock">Punk Rock</option>
+                                <option value="gothic dark">Gothic Dark</option>
+                                <option value="cyberpunk futuristic">Cyberpunk Futuristic</option>
+                            </optgroup>
+                            <optgroup label="Artistic & Creative">
+                                <option value="artistic creative">Artistic & Creative</option>
+                                <option value="watercolor artistic">Watercolor Artistic</option>
+                                <option value="geometric abstract">Geometric Abstract</option>
+                                <option value="comic book">Comic Book Style</option>
+                                <option value="pop art">Pop Art</option>
+                                <option value="art deco">Art Deco</option>
+                                <option value="bauhaus">Bauhaus</option>
+                            </optgroup>
+                            <optgroup label="Fun & Playful">
+                                <option value="fun playful">Fun & Playful</option>
+                                <option value="kawaii cute">Kawaii Cute</option>
+                                <option value="cartoon animated">Cartoon Animated</option>
+                                <option value="doodle sketch">Doodle Sketch</option>
+                                <option value="childlike innocent">Childlike Innocent</option>
+                            </optgroup>
+                            <optgroup label="Nature & Organic">
+                                <option value="nature organic">Nature & Organic</option>
+                                <option value="botanical floral">Botanical Floral</option>
+                                <option value="wilderness outdoor">Wilderness Outdoor</option>
+                                <option value="rustic farmhouse">Rustic Farmhouse</option>
+                            </optgroup>
+                            <optgroup label="Luxury & Premium">
+                                <option value="luxury premium">Luxury Premium</option>
+                                <option value="royal regal">Royal Regal</option>
+                                <option value="crystal jeweled">Crystal Jeweled</option>
+                                <option value="metallic shimmering">Metallic Shimmering</option>
+                            </optgroup>
+                            <optgroup label="Typography Focused">
+                                <option value="handwritten script">Handwritten Script</option>
+                                <option value="bold typography">Bold Typography</option>
+                                <option value="calligraphy elegant">Calligraphy Elegant</option>
+                                <option value="graffiti lettering">Graffiti Lettering</option>
+                            </optgroup>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="color-scheme">Color Scheme</label>
+                        <select id="color-scheme" class="select-input">
+                            <option value="">Any colors</option>
+                            <optgroup label="Monochrome">
+                                <option value="black and white">Black & White</option>
+                                <option value="monochrome blue">Monochrome Blue</option>
+                                <option value="monochrome red">Monochrome Red</option>
+                                <option value="monochrome green">Monochrome Green</option>
+                                <option value="monochrome purple">Monochrome Purple</option>
+                                <option value="grayscale silver">Grayscale Silver</option>
+                            </optgroup>
+                            <optgroup label="Warm Tones">
+                                <option value="warm earth tones">Warm Earth Tones</option>
+                                <option value="sunset orange">Sunset Orange</option>
+                                <option value="autumn colors">Autumn Colors</option>
+                                <option value="rust and copper">Rust & Copper</option>
+                                <option value="terracotta warm">Terracotta Warm</option>
+                                <option value="golden yellow">Golden Yellow</option>
+                            </optgroup>
+                            <optgroup label="Cool Tones">
+                                <option value="ocean blue">Ocean Blue</option>
+                                <option value="forest green">Forest Green</option>
+                                <option value="arctic ice">Arctic Ice</option>
+                                <option value="lavender purple">Lavender Purple</option>
+                                <option value="mint green">Mint Green</option>
+                                <option value="steel blue">Steel Blue</option>
+                            </optgroup>
+                            <optgroup label="Vibrant & Bold">
+                                <option value="bright neon">Bright Neon</option>
+                                <option value="electric colors">Electric Colors</option>
+                                <option value="rainbow gradient">Rainbow Gradient</option>
+                                <option value="hot pink magenta">Hot Pink & Magenta</option>
+                                <option value="lime green electric">Lime Green Electric</option>
+                                <option value="cyber punk colors">Cyber Punk Colors</option>
+                            </optgroup>
+                            <optgroup label="Soft & Pastel">
+                                <option value="pastel soft">Pastel & Soft</option>
+                                <option value="baby pastels">Baby Pastels</option>
+                                <option value="powder colors">Powder Colors</option>
+                                <option value="blush pink">Blush Pink</option>
+                                <option value="sage green">Sage Green</option>
+                                <option value="dusty rose">Dusty Rose</option>
+                            </optgroup>
+                            <optgroup label="Luxury & Premium">
+                                <option value="gold and black">Gold & Black</option>
+                                <option value="rose gold elegant">Rose Gold Elegant</option>
+                                <option value="silver metallic">Silver Metallic</option>
+                                <option value="deep royal colors">Deep Royal Colors</option>
+                                <option value="champagne gold">Champagne Gold</option>
+                                <option value="platinum silver">Platinum Silver</option>
+                            </optgroup>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="environment">Environment & Setting</label>
+                        <select id="environment" class="select-input">
+                            <option value="">Any environment</option>
+                            <optgroup label="Studio & Professional">
+                                <option value="studio lighting">Studio Lighting</option>
+                                <option value="white background">White Background</option>
+                                <option value="black background">Black Background</option>
+                                <option value="gradient background">Gradient Background</option>
+                                <option value="professional setup">Professional Setup</option>
+                            </optgroup>
+                            <optgroup label="Home & Indoor">
+                                <option value="cozy home">Cozy Home</option>
+                                <option value="modern office">Modern Office</option>
+                                <option value="coffee shop">Coffee Shop</option>
+                                <option value="library study">Library Study</option>
+                                <option value="bedroom aesthetic">Bedroom Aesthetic</option>
+                                <option value="kitchen counter">Kitchen Counter</option>
+                                <option value="living room">Living Room</option>
+                                <option value="workspace desk">Workspace Desk</option>
+                                <option value="bookshelf background">Bookshelf Background</option>
+                                <option value="minimalist room">Minimalist Room</option>
+                            </optgroup>
+                            <optgroup label="Outdoor & Nature">
+                                <option value="natural daylight">Natural Daylight</option>
+                                <option value="outdoor nature">Outdoor Nature</option>
+                                <option value="beach summer">Beach Summer</option>
+                                <option value="winter snow">Winter Snow</option>
+                                <option value="forest setting">Forest Setting</option>
+                                <option value="mountain backdrop">Mountain Backdrop</option>
+                                <option value="garden park">Garden Park</option>
+                                <option value="sunset golden hour">Sunset Golden Hour</option>
+                                <option value="campfire outdoor">Campfire Outdoor</option>
+                                <option value="picnic setting">Picnic Setting</option>
+                            </optgroup>
+                            <optgroup label="Urban & Lifestyle">
+                                <option value="urban street">Urban Street</option>
+                                <option value="city skyline">City Skyline</option>
+                                <option value="brick wall background">Brick Wall Background</option>
+                                <option value="graffiti wall">Graffiti Wall</option>
+                                <option value="rooftop view">Rooftop View</option>
+                                <option value="downtown cafe">Downtown Cafe</option>
+                                <option value="shopping district">Shopping District</option>
+                                <option value="subway station">Subway Station</option>
+                            </optgroup>
+                            <optgroup label="Activity & Lifestyle">
+                                <option value="gym fitness">Gym Fitness</option>
+                                <option value="festival concert">Festival Concert</option>
+                                <option value="travel vacation">Travel Vacation</option>
+                                <option value="camping adventure">Camping Adventure</option>
+                                <option value="yoga meditation">Yoga Meditation</option>
+                                <option value="sports field">Sports Field</option>
+                                <option value="art studio">Art Studio</option>
+                                <option value="music venue">Music Venue</option>
+                                <option value="skate park">Skate Park</option>
+                                <option value="food truck">Food Truck</option>
+                            </optgroup>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="size-format">Size & Format</label>
+                        <select id="size-format" class="select-input">
+                            <option value="">Standard size</option>
+                            <option value="small compact">Small & Compact</option>
+                            <option value="large oversized">Large & Oversized</option>
+                            <option value="square format">Square Format</option>
+                            <option value="wide landscape">Wide Landscape</option>
+                            <option value="tall portrait">Tall Portrait</option>
+                            <option value="mini tiny">Mini & Tiny</option>
+                            <option value="jumbo extra large">Jumbo Extra Large</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="material-texture">Material & Texture</label>
+                        <select id="material-texture" class="select-input">
+                            <option value="">Standard material</option>
+                            <option value="soft cotton">Soft Cotton</option>
+                            <option value="premium leather">Premium Leather</option>
+                            <option value="metallic finish">Metallic Finish</option>
+                            <option value="wood grain">Wood Grain</option>
+                            <option value="glass crystal">Glass Crystal</option>
+                            <option value="fabric canvas">Fabric Canvas</option>
+                            <option value="ceramic glossy">Ceramic Glossy</option>
+                            <option value="matte finish">Matte Finish</option>
+                            <option value="textured rough">Textured Rough</option>
+                            <option value="smooth polished">Smooth Polished</option>
+                            <option value="vintage distressed">Vintage Distressed</option>
+                            <option value="holographic iridescent">Holographic Iridescent</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="no-text" class="checkbox-input">
+                            <label for="no-text" class="checkbox-label">No Text - Generate design without any text or words</label>
+                        </div>
+                    </div>
+
+                    <button id="generate-btn" class="generate-btn" disabled>
+                        <span class="btn-text">Generate Mockup</span>
+                        <span class="btn-loader" style="display: none;">🎨 Creating...</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="preview-panel">
+                <div id="mockup-display" class="mockup-display">
+                    <div class="placeholder-content">
+                        <div class="placeholder-icon">🎨</div>
+                        <h3>Your mockup will appear here</h3>
+                        <p>Fill out the form and click "Generate Mockup" to create your AI-powered product visualization</p>
+                    </div>
+                </div>
+
+                <div id="mockup-actions" class="mockup-actions" style="display: none;">
+                    <button id="favorite-btn" class="action-btn favorite-btn">
+                        ⭐ Favorite
+                    </button>
+                    <button id="download-btn" class="action-btn download-btn">
+                        📥 Download
+                    </button>
+                    <button id="regenerate-btn" class="action-btn regenerate-btn">
+                        🔄 Regenerate
+                    </button>
+                    <button id="new-mockup-btn" class="action-btn new-btn">
+                        ✨ New Mockup
+                    </button>
+                </div>
+
+                <div id="camera-angles" class="camera-angles" style="display: none;">
+                    <h3>Camera Angles & Perspectives</h3>
+                    <div class="angle-buttons">
+                        <button class="angle-btn" data-angle="front-view">📷 Front View</button>
+                        <button class="angle-btn" data-angle="side-view">📷 Side View</button>
+                        <button class="angle-btn" data-angle="top-view">📷 Top View</button>
+                        <button class="angle-btn" data-angle="diagonal-view">📷 Diagonal</button>
+                        <button class="angle-btn" data-angle="lifestyle-shot">📷 Lifestyle</button>
+                        <button class="angle-btn" data-angle="close-up">📷 Close-up</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <section class="gallery-section" id="gallery-section" style="display: none;">
+            <h2>Your Generated Mockups</h2>
+            <div id="gallery" class="gallery">
+                <!-- Generated mockups will appear here -->
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>Powered by AI • Create unlimited mockups for your merchandise ideas</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,454 @@
+body {
+    background-color: #f8f9fa;
+    font-family: 'Google Sans', Arial, sans-serif;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+body.dark-mode .recommendation-card {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+}
+
+body.dark-mode #recommendationsOverview {
+    background-color: #2a2a2a;
+}
+
+/* Animation Styles */
+#spotterAnimation {
+    width: 100%;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#spotterAnimation svg {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.pin-path {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: dash 3s linear infinite;
+}
+
+@keyframes dash {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+.location-pin {
+    animation: bounce 1s infinite alternate;
+    transform-origin: bottom;
+}
+
+@keyframes bounce {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-20px); }
+}
+
+/* Recommendation Styles */
+.recommendation-container {
+    display: flex;
+    overflow-x: auto;
+    gap: 15px;
+    padding: 15px 0;
+}
+
+.recommendation-card {
+    flex: 1 1 300px;
+    max-width: calc(33.333% - 15px);
+    background-color: white;
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.recommendation-card h6 {
+    margin-bottom: 5px;
+}
+
+.recommendation-card small {
+    color: #6c757d;
+    margin-top: 5px;
+}
+
+.recommendation-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.location-card {
+    background-color: white;
+    border-radius: 12px;
+    margin: 10px 0;
+    padding: 15px;
+    transition: all 0.3s ease;
+    border: 1px solid #e0e0e0;
+}
+
+.promo-potential-badge {
+    font-size: 0.8em;
+    margin-left: 10px;
+}
+
+#recommendationsOverview {
+    background-color: #f1f3f4;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.search-container {
+    position: relative;
+}
+
+.google-like-input {
+    border: none;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 15px 50px 15px 20px;
+    font-size: 16px;
+}
+
+#loadingIndicator {
+    text-align: center;
+    padding: 20px;
+}
+
+.recommendation-card .recommendation-details {
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: #555;
+}
+
+.day-plan-detail {
+    margin-top: 10px;
+    background-color: #f0f0f0;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.app-title {
+    text-align: center;
+    color: #333;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.app-description {
+    text-align: center;
+    color: #666;
+    margin-bottom: 20px;
+    font-size: 1.1em;
+}
+
+.advanced-search-container {
+    border: 1px solid #e0e0e0;
+    margin-bottom: 15px;
+}
+
+.theme-toggle {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+}
+
+.planning-options {
+    margin-bottom: 15px;
+}
+
+.day-week-plan {
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    padding: 15px;
+    margin-top: 15px;
+}
+
+.day-week-plan h5 {
+    margin-bottom: 15px;
+}
+
+.plan-item {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.locations-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 15px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.locations-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.locations-list .recommendation-card {
+    max-width: 100%;
+    flex-direction: row;
+    align-items: center;
+}
+
+.locations-list .recommendation-card h6 {
+    margin-bottom: 0;
+    margin-right: 15px;
+}
+
+.locations-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.locations-cards .recommendation-card {
+    flex: 1 1 300px;
+    max-width: calc(33.333% - 15px);
+}
+
+.locations-compact {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.locations-compact .recommendation-card {
+    padding: 10px;
+    font-size: 0.9em;
+}
+
+.locations-compact .recommendation-card .recommendation-details {
+    display: none;
+}
+
+.plans-container {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 2px solid #eee;
+    width: 100%;
+}
+
+body.dark-mode .plans-container {
+    border-top-color: #333;
+}
+
+.plan-section {
+    background-color: #f8f9fa;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+body.dark-mode .plan-section {
+    background-color: #2a2a2a;
+}
+
+.plan-items {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.plan-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+body.dark-mode .plan-item {
+    background-color: #1e1e1e;
+}
+
+.time-badge, .day-badge {
+    background: linear-gradient(135deg, #3494E6, #EC6EAD);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.9em;
+    white-space: nowrap;
+}
+
+.plan-content {
+    flex: 1;
+}
+
+.plan-strategy {
+    color: #666;
+    font-size: 0.9em;
+    margin-top: 5px;
+}
+
+body.dark-mode .plan-strategy {
+    color: #aaa;
+}
+
+.time-info {
+    color: #888;
+    font-size: 0.85em;
+    margin: 3px 0;
+}
+
+body.dark-mode .time-info {
+    color: #999;
+}
+
+body.dark-mode .day-week-plan {
+    background-color: #2a2a2a;
+}
+
+body.dark-mode .plan-item {
+    color: #e0e0e0;
+}
+
+.form-label .material-icons {
+    font-size: 18px;
+    color: #6c757d;
+    cursor: help;
+}
+
+body.dark-mode .form-label .material-icons {
+    color: #adb5bd;
+}
+
+.btn .material-icons {
+    vertical-align: middle;
+    margin-right: 8px;
+    font-size: 20px;
+}
+
+.export-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.export-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.export-button .material-icons {
+    font-size: 18px;
+}
+
+body.dark-mode .btn-outline-primary {
+    color: #7eb9ff;
+    border-color: #7eb9ff;
+}
+
+body.dark-mode .btn-outline-primary:hover {
+    background-color: #7eb9ff;
+    color: #1e1e1e;
+}
+
+.configuration-alert {
+    margin-bottom: 20px;
+    border-left: 4px solid currentColor;
+}
+
+.configuration-alert h6 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.configuration-alert ul {
+    margin: 10px 0;
+    padding-left: 20px;
+}
+
+.configuration-alert li {
+    margin-bottom: 5px;
+}
+
+.configuration-alert code {
+    background-color: rgba(0,0,0,0.1);
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-family: 'Courier New', monospace;
+}
+
+body.dark-mode .configuration-alert code {
+    background-color: rgba(255,255,255,0.1);
+}
+
+.alert-info {
+    color: #0c5460;
+    background-color: #d1ecf1;
+    border-color: #bee5eb;
+}
+
+body.dark-mode .alert-info {
+    color: #9eeaf9;
+    background-color: #1b4951;
+    border-color: #3d7f89;
+}
+
+.alert-warning {
+    color: #664d03;
+    background-color: #fff3cd;
+    border-color: #ffecb5;
+}
+
+body.dark-mode .alert-warning {
+    color: #ffda6a;
+    background-color: #4d3d00;
+    border-color: #997a00;
+}
+
+.alert-danger {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c2c7;
+}
+
+body.dark-mode .alert-danger {
+    color: #ea868f;
+    background-color: #4a1e1e;
+    border-color: #8b3538;
+}
+
+@media (max-width: 992px) {
+    .recommendation-card {
+        max-width: calc(50% - 15px);
+    }
+}
+
+@media (max-width: 768px) {
+    .recommendation-card {
+        max-width: 100%;
+    }
+}

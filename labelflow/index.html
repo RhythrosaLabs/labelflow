@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LabelFlow - Ultimate Record Label Management</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="integrated_styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <nav class="sidebar" aria-label="Primary">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <i class="fas fa-music"></i>
+                    <span>LabelFlow</span>
+                </div>
+            </div>
+            <div class="nav-menu">
+                <div class="nav-item active" data-section="dashboard"><i class="fas fa-chart-line"></i><span>Dashboard</span></div>
+                <div class="nav-item" data-section="artists"><i class="fas fa-users"></i><span>Artists</span></div>
+                <div class="nav-item" data-section="campaigns"><i class="fas fa-bullhorn"></i><span>Campaigns</span></div>
+                <div class="nav-item" data-section="assets"><i class="fas fa-folder-open"></i><span>Assets</span></div>
+                <div class="nav-item" data-section="schedule"><i class="fas fa-calendar-alt"></i><span>Schedule</span></div>
+                <div class="nav-item" data-section="contacts"><i class="fas fa-address-book"></i><span>Contacts</span></div>
+                <div class="nav-item" data-section="opportunities"><i class="fas fa-star"></i><span>Opportunities</span></div>
+                <div class="nav-item" data-section="notes"><i class="fas fa-sticky-note"></i><span>Notes</span></div>
+                <div class="nav-item" data-section="ai-artist"><i class="fas fa-magic"></i><span>AI Artist</span></div>
+                <div class="nav-item" data-section="ai-blog-writer"><i class="fas fa-feather-alt"></i><span>AI Blog Writer</span></div>
+                <div class="nav-item" data-section="merch-mockups"><i class="fas fa-tshirt"></i><span>Merch Mockups</span></div>
+                <div class="nav-item" data-section="resources"><i class="fas fa-book"></i><span>Resources</span></div>
+                <div class="nav-item" data-section="todos"><i class="fas fa-tasks"></i><span>To-Do</span></div>
+                <div class="nav-item" data-section="spot-spotter"><i class="fas fa-map-marker-alt"></i><span>Street Marketing</span></div>
+                <div class="nav-item" data-section="analytics"><i class="fas fa-chart-bar"></i><span>Analytics</span></div>
+            </div>
+            <div class="ai-assistant">
+                <div class="ai-button"><i class="fas fa-robot"></i><span>AI Assistant</span></div>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            <header class="top-bar">
+                <div class="search-bar"><i class="fas fa-search"></i><input type="text" placeholder="Search artists, campaigns, assets..."></div>
+                <div class="header-actions">
+                    <button class="btn-primary"><i class="fas fa-plus"></i>Quick Add</button>
+                    <button class="btn-secondary" id="downloadAppBtn"><i class="fas fa-download"></i>Download App</button>
+                    <div class="notification-icon"><i class="fas fa-bell"></i><span class="notification-badge">3</span></div>
+                    <div class="user-profile"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=40&h=40&fit=crop&crop=face" alt="User avatar"></div>
+                </div>
+            </header>
+
+            <section id="dashboard" class="content-section active">
+                <div class="section-header">
+                    <div>
+                        <h1>Dashboard</h1>
+                        <p>Overview of your label performance</p>
+                    </div>
+                    <div class="header-actions-group">
+                        <button class="btn-secondary">Share Report</button>
+                        <button class="btn-primary">Generate Insights</button>
+                    </div>
+                </div>
+                <div class="stats-grid">
+                    <div class="stat-card"><div class="stat-icon"><i class="fas fa-users"></i></div><div class="stat-info"><h3>42</h3><p>Active Artists</p><span class="trend positive">+12%</span></div></div>
+                    <div class="stat-card"><div class="stat-icon"><i class="fas fa-bullhorn"></i></div><div class="stat-info"><h3>28</h3><p>Active Campaigns</p><span class="trend positive">+8%</span></div></div>
+                    <div class="stat-card"><div class="stat-icon"><i class="fas fa-play"></i></div><div class="stat-info"><h3>2.4M</h3><p>Monthly Streams</p><span class="trend positive">+24%</span></div></div>
+                    <div class="stat-card"><div class="stat-icon"><i class="fas fa-dollar-sign"></i></div><div class="stat-info"><h3>$124K</h3><p>Monthly Revenue</p><span class="trend positive">+18%</span></div></div>
+                </div>
+                <div class="dashboard-grid">
+                    <div class="dashboard-card recent-activity">
+                        <h3>Recent Activity</h3>
+                        <div class="activity-list">
+                            <div class="activity-item"><div class="activity-icon"><i class="fas fa-upload"></i></div><div class="activity-info"><p><strong>New track uploaded</strong> by Luna Nova</p><span>2 hours ago</span></div></div>
+                            <div class="activity-item"><div class="activity-icon"><i class="fas fa-bullhorn"></i></div><div class="activity-info"><p><strong>Campaign launched</strong> for "Summer Vibes" EP</p><span>5 hours ago</span></div></div>
+                            <div class="activity-item"><div class="activity-icon"><i class="fas fa-handshake"></i></div><div class="activity-info"><p><strong>Collaboration secured</strong> with Metro FM</p><span>1 day ago</span></div></div>
+                        </div>
+                    </div>
+                    <div class="dashboard-card upcoming-events"><h3>Upcoming Events</h3><div class="events-list" id="eventsList"></div></div>
+                    <div class="dashboard-card ai-insights">
+                        <h3>AI Insights</h3>
+                        <div class="insights-list">
+                            <div class="insight-item"><i class="fas fa-lightbulb"></i><p>Promote "Midnight Dreams" on TikTok - trending up 340%</p></div>
+                            <div class="insight-item"><i class="fas fa-target"></i><p>Optimal release time for Alex Chen: Tuesday 3PM EST</p></div>
+                            <div class="insight-item"><i class="fas fa-chart-line"></i><p>Luna Nova fanbase surging in Berlin and Amsterdam</p></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="artists" class="content-section">
+                <div class="section-header"><div><h1>Artists</h1><p>Manage your roster and track performance</p></div><button class="btn-primary"><i class="fas fa-plus"></i>Add Artist</button></div>
+                <div class="artists-grid" id="artistsGrid"></div>
+            </section>
+
+            <section id="campaigns" class="content-section">
+                <div class="section-header"><div><h1>Marketing Campaigns</h1><p>Plan, execute, and measure impact</p></div><button class="btn-primary"><i class="fas fa-plus"></i>New Campaign</button></div>
+                <div class="campaigns-list" id="campaignsList"></div>
+            </section>
+
+            <section id="assets" class="content-section">
+                <div class="section-header">
+                    <div><h1>Asset Management</h1><p>Organize and distribute your creative files</p></div>
+                    <div class="header-actions-group">
+                        <button class="btn-secondary" id="downloadAllBtn"><i class="fas fa-download"></i>Download All</button>
+                        <button class="btn-primary"><i class="fas fa-upload"></i>Upload Assets</button>
+                    </div>
+                </div>
+                <div class="asset-filters">
+                    <button class="filter-btn active">All</button>
+                    <button class="filter-btn">Audio</button>
+                    <button class="filter-btn">Images</button>
+                    <button class="filter-btn">Videos</button>
+                    <button class="filter-btn">Documents</button>
+                </div>
+                <div class="assets-grid" id="assetsGrid"></div>
+            </section>
+
+            <section id="schedule" class="content-section">
+                <div class="section-header"><div><h1>Schedule</h1><p>Releases, shows, and important dates</p></div><button class="btn-primary"><i class="fas fa-plus"></i>Add Event</button></div>
+                <div class="calendar-container">
+                    <div class="calendar-header"><button class="nav-btn"><i class="fas fa-chevron-left"></i></button><h3>December 2024</h3><button class="nav-btn"><i class="fas fa-chevron-right"></i></button></div>
+                    <div class="calendar-grid" id="calendarGrid"></div>
+                </div>
+            </section>
+
+            <section id="contacts" class="content-section">
+                <div class="section-header"><div><h1>Contacts</h1><p>Industry relationships in one place</p></div><button class="btn-primary"><i class="fas fa-plus"></i>Add Contact</button></div>
+                <div class="contacts-list" id="contactsList"></div>
+            </section>
+
+            <section id="opportunities" class="content-section">
+                <div class="section-header"><div><h1>Business Opportunities</h1><p>AI-powered discovery for your roster</p></div></div>
+                <div class="opportunities-search-container">
+                    <div class="dashboard-card">
+                        <h3>Find Opportunities</h3>
+                        <div class="form-group"><label>What are you looking for?</label><textarea id="opportunityQuery" class="text-input" rows="3" placeholder="Sync licensing, festivals, collaborations..."></textarea></div>
+                        <div class="form-row">
+                            <div class="form-group"><label>Opportunity Type</label><select id="opportunityType" class="select-input"><option value="all">All Types</option><option value="sync">Sync Licensing</option><option value="festivals">Music Festivals</option><option value="contests">Contests</option><option value="collaborations">Collaborations</option><option value="grants">Grants</option><option value="showcases">Showcases</option><option value="labels">Record Labels</option><option value="playlists">Playlist Placements</option><option value="media">Media & Press</option></select></div>
+                            <div class="form-group"><label>Genre Focus</label><select id="opportunityGenre" class="select-input"><option value="all">All Genres</option><option value="pop">Pop</option><option value="rock">Rock</option><option value="hip-hop">Hip-Hop</option><option value="electronic">Electronic</option><option value="indie">Indie</option><option value="country">Country</option><option value="jazz">Jazz</option><option value="classical">Classical</option><option value="folk">Folk</option><option value="rnb">R&B</option></select></div>
+                        </div>
+                        <button class="btn-primary search-btn" id="opportunitySearchBtn"><i class="fas fa-search"></i>Find Opportunities</button>
+                    </div>
+                    <div id="opportunityLoadingIndicator" class="loading-indicator" style="display:none;"><div class="loading-spinner"><i class="fas fa-spinner fa-spin"></i></div><p>Discovering opportunities...</p></div>
+                    <div id="opportunityResults" class="opportunity-results">
+                        <div class="empty-state"><i class="fas fa-star"></i><h3>No search yet</h3><p>Enter requirements to discover relevant opportunities</p></div>
+                    </div>
+                    <div class="opportunities-kanban" id="opportunitiesKanban" style="display:none;">
+                        <div class="kanban-column"><h3>Prospecting</h3><div class="opportunity-card"><h4>Spotify Playlist Placement</h4><p>New Music Friday consideration for Luna Nova</p><span class="value">$15K potential</span></div></div>
+                        <div class="kanban-column"><h3>In Progress</h3><div class="opportunity-card"><h4>Festival Booking</h4><p>Summer circuit for Alex Chen</p><span class="value">$50K potential</span></div></div>
+                        <div class="kanban-column"><h3>Closed</h3><div class="opportunity-card"><h4>Sync License Deal</h4><p>Netflix series soundtrack placement</p><span class="value">$25K closed</span></div></div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="ai-blog-writer" class="content-section">
+                <div class="blog-writer-container">
+                    <div class="blog-header">
+                        <div class="blog-logo"><i class="fas fa-feather-alt"></i><h1>AI Blog Writer</h1></div>
+                        <nav class="blog-header-nav"><button class="nav-btn active" id="writeTab"><i class="fas fa-edit"></i>Write</button><button class="nav-btn" id="libraryTab"><i class="fas fa-book-open"></i>Library</button></nav>
+                        <div class="blog-header-actions">
+                            <button class="btn-secondary" id="saveBtn"><i class="fas fa-save"></i>Save Draft</button>
+                            <button class="btn-secondary" id="downloadHtmlBtn"><i class="fas fa-download"></i>Download HTML</button>
+                            <button class="btn-secondary" id="downloadPdfBtn"><i class="fas fa-file-pdf"></i>Download PDF</button>
+                            <button class="btn-primary" id="publishBtn"><i class="fas fa-rocket"></i>Publish</button>
+                        </div>
+                    </div>
+                    <div class="blog-main-content" id="writeView">
+                        <div class="blog-sidebar">
+                            <div class="ai-panel">
+                                <h3><i class="fas fa-robot"></i>AI Assistant</h3>
+                                <div class="ai-section">
+                                    <h4>Quick Actions</h4>
+                                    <button class="ai-btn" id="generateIdeasBtn"><i class="fas fa-lightbulb"></i>Generate Ideas</button>
+                                    <button class="ai-btn" id="generateTitleBtn"><i class="fas fa-heading"></i>Suggest Titles</button>
+                                    <button class="ai-btn" id="improveTextBtn"><i class="fas fa-magic"></i>Improve Text</button>
+                                    <button class="ai-btn" id="generateImageBtn"><i class="fas fa-image"></i>Generate Image</button>
+                                    <button class="ai-btn" id="generateFullBlogBtn"><i class="fas fa-scroll"></i>Generate Full Blog</button>
+                                </div>
+                                <div class="ai-section"><h4>Writing Style</h4><select id="toneSelect" class="select-input"><option value="professional">Professional</option><option value="casual">Casual</option><option value="formal">Formal</option><option value="creative">Creative</option><option value="persuasive">Persuasive</option></select></div>
+                                <div class="ai-section"><h4>Topic Input</h4><input type="text" id="topicInput" class="text-input" placeholder="Enter a topic..."><button class="ai-btn full-width" id="expandTopicBtn"><i class="fas fa-expand-arrows-alt"></i>Expand Topic</button></div>
+                                <div class="ai-section">
+                                    <h4>AI Chat</h4>
+                                    <div class="chat-container" id="blogChatContainer">
+                                        <div class="chat-message ai-message"><i class="fas fa-robot"></i><span>Hi! I'm your AI writing assistant.</span></div>
+                                    </div>
+                                    <div class="chat-input-container"><input type="text" id="blogChatInput" class="text-input" placeholder="Ask me anything..."><button id="sendBlogChatBtn" class="btn-icon"><i class="fas fa-paper-plane"></i></button></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="editor-area">
+                            <div class="editor-header"><input type="text" id="titleInput" class="title-input" placeholder="Enter your blog post title..."><div class="editor-stats"><span id="wordCount">0 words</span><span id="charCount">0 characters</span></div></div>
+                            <div class="editor-toolbar">
+                                <button class="toolbar-btn" data-command="bold" title="Bold"><i class="fas fa-bold"></i></button>
+                                <button class="toolbar-btn" data-command="italic" title="Italic"><i class="fas fa-italic"></i></button>
+                                <button class="toolbar-btn" data-command="underline" title="Underline"><i class="fas fa-underline"></i></button>
+                                <div class="toolbar-separator"></div>
+                                <button class="toolbar-btn" data-command="insertUnorderedList" title="Bullet List"><i class="fas fa-list-ul"></i></button>
+                                <button class="toolbar-btn" data-command="insertOrderedList" title="Numbered List"><i class="fas fa-list-ol"></i></button>
+                                <div class="toolbar-separator"></div>
+                                <button class="toolbar-btn" id="insertImageBtn" title="Insert Image"><i class="fas fa-image"></i></button>
+                            </div>
+                            <div class="editor-container"><div id="blogEditor" class="editor" contenteditable="true" data-placeholder="Start writing your blog post here..."></div></div>
+                            <div class="generated-content" id="generatedContent" style="display:none;"><h4>AI Generated Content</h4><div class="generated-text" id="generatedText"></div><div class="generated-actions"><button class="btn-primary" id="insertGeneratedBtn">Insert</button><button class="btn-secondary" id="regenerateBtn">Regenerate</button><button class="btn-secondary" id="dismissBtn">Dismiss</button></div></div>
+                        </div>
+                    </div>
+                    <div class="library-view" id="libraryView" style="display:none;">
+                        <div class="library-header"><h2><i class="fas fa-book-open"></i>Public Library</h2><p>Discover community-written blogs</p></div>
+                        <div class="library-filters"><input type="text" id="searchInput" class="text-input search-input" placeholder="Search blogs..."><select id="sortSelect" class="select-input"><option value="newest">Newest First</option><option value="oldest">Oldest First</option><option value="title">By Title</option></select></div>
+                        <div class="blog-grid" id="blogGrid"></div>
+                    </div>
+                    <div class="blog-reader" id="blogReader" style="display:none;">
+                        <div class="reader-header"><button class="btn-secondary" id="backToLibraryBtn"><i class="fas fa-arrow-left"></i>Back to Library</button><div class="reader-actions"><button class="btn-secondary" id="shareBtn"><i class="fas fa-share"></i>Share</button></div></div>
+                        <article class="blog-article" id="blogArticle"></article>
+                    </div>
+                    <div class="loading-overlay" id="blogLoadingOverlay" style="display:none;"><div class="loading-spinner"><i class="fas fa-circle-notch fa-spin"></i><p>AI is thinking...</p></div></div>
+                </div>
+            </section>
+
+            <section id="merch-mockups" class="content-section">
+                <div class="section-header"><div><h1>AI Merch Mockups</h1><p>Generate realistic product mockups instantly</p></div></div>
+                <div class="merch-mockup-container">
+                    <div class="dashboard-grid">
+                        <div class="dashboard-card">
+                            <h3>Create Your Mockup</h3>
+                            <div class="form-group"><label>Product Type</label><select id="product-type" class="select-input"><option value="">Select...</option><option value="custom-kit">Custom Kit</option><option value="starter-kit">Starter Kit</option><option value="apparel-kit">Apparel Kit</option><option value="office-kit">Office Kit</option><option value="lifestyle-kit">Lifestyle Kit</option><option value="t-shirt">T-Shirt</option><option value="hoodie">Hoodie</option><option value="tote-bag">Tote Bag</option><option value="mug">Mug</option><option value="poster">Poster</option></select></div>
+                            <div id="custom-kit-builder" class="custom-kit-builder" style="display:none;"><h3>Build Your Custom Kit</h3><p>Select up to 10 products:</p><div class="custom-kit-grid" id="customKitGrid"></div><div class="kit-counter"><span id="kit-counter-text">0 / 10 items selected</span></div></div>
+                            <div class="form-group"><label>Design Description</label><textarea id="design-input" class="text-input" rows="3" placeholder="Describe your design..."></textarea></div>
+                            <div class="form-group"><label>Style & Mood</label><select id="style-input" class="select-input"><option value="">Select style...</option><option value="modern minimalist">Modern Minimalist</option><option value="vintage retro">Vintage Retro</option><option value="bold colorful">Bold & Colorful</option><option value="street urban">Street & Urban</option><option value="nature organic">Nature & Organic</option><option value="kawaii cute">Kawaii Cute</option><option value="cyberpunk futuristic">Cyberpunk Futuristic</option></select></div>
+                            <div class="form-group"><label>Color Scheme</label><select id="color-scheme" class="select-input"><option value="">Any colors</option><option value="monochrome">Monochrome</option><option value="warm">Warm Earth Tones</option><option value="cool">Cool Ocean</option><option value="vibrant">Vibrant Neon</option><option value="pastel">Soft Pastels</option><option value="luxury">Luxury Gold & Black</option></select></div>
+                            <div class="form-group"><label>Environment & Setting</label><select id="environment" class="select-input"><option value="">Any</option><option value="studio">Studio Lighting</option><option value="home">Cozy Home</option><option value="outdoor">Outdoor Nature</option><option value="urban">Urban Street</option><option value="festival">Festival Stage</option></select></div>
+                            <div class="form-group"><label>Size & Format</label><select id="size-format" class="select-input"><option value="">Standard</option><option value="square">Square</option><option value="landscape">Landscape</option><option value="portrait">Portrait</option><option value="mini">Mini</option></select></div>
+                            <div class="form-group"><label>Material & Texture</label><select id="material-texture" class="select-input"><option value="">Standard</option><option value="cotton">Soft Cotton</option><option value="leather">Premium Leather</option><option value="metallic">Metallic Finish</option><option value="wood">Wood Grain</option><option value="glass">Glass Glossy</option></select></div>
+                            <div class="form-group"><label class="checkbox-label"><input type="checkbox" id="no-text" class="checkbox-input"> No Text - generate without words</label></div>
+                            <button id="generate-mockup-btn" class="btn-primary"><i class="fas fa-magic"></i><span class="btn-text">Generate Mockup</span></button>
+                        </div>
+                        <div class="dashboard-card">
+                            <h3>Mockup Preview</h3>
+                            <div id="mockup-display" class="mockup-display"><div class="placeholder-content"><i class="fas fa-tshirt"></i><h3>Your mockup will appear here</h3><p>Fill the form and click "Generate Mockup"</p></div></div>
+                            <div id="mockup-actions" class="mockup-actions" style="display:none;"><button id="favorite-btn" class="btn-secondary"><i class="fas fa-star"></i>Favorite</button><button id="download-btn" class="btn-secondary"><i class="fas fa-download"></i>Download</button><button id="regenerate-btn" class="btn-secondary"><i class="fas fa-redo"></i>Regenerate</button><button id="new-mockup-btn" class="btn-primary"><i class="fas fa-plus"></i>New Mockup</button></div>
+                            <div id="camera-angles" class="camera-angles" style="display:none;"><h4>Camera Angles</h4><div class="angle-buttons"><button class="btn-secondary angle-btn" data-angle="front">Front</button><button class="btn-secondary angle-btn" data-angle="side">Side</button><button class="btn-secondary angle-btn" data-angle="top">Top</button><button class="btn-secondary angle-btn" data-angle="diagonal">Diagonal</button><button class="btn-secondary angle-btn" data-angle="lifestyle">Lifestyle</button><button class="btn-secondary angle-btn" data-angle="closeup">Close-up</button></div></div>
+                        </div>
+                    </div>
+                    <div class="dashboard-card" id="mockup-gallery" style="display:none;"><h3>Your Generated Mockups</h3><div id="gallery" class="merch-gallery"></div></div>
+                </div>
+            </section>
+
+            <section id="resources" class="content-section">
+                <div class="section-header"><div><h1>Resources</h1><p>Links, documents, and references</p></div><button class="btn-primary"><i class="fas fa-plus"></i>Add Resource</button></div>
+                <div class="resources-grid">
+                    <div class="resource-categories">
+                        <div class="category-card"><div class="category-icon"><i class="fas fa-link"></i></div><h3>Links</h3><p class="category-count">12 items</p></div>
+                        <div class="category-card"><div class="category-icon"><i class="fas fa-file-alt"></i></div><h3>Documents</h3><p class="category-count">18 items</p></div>
+                        <div class="category-card"><div class="category-icon"><i class="fas fa-video"></i></div><h3>Media</h3><p class="category-count">6 items</p></div>
+                        <div class="category-card"><div class="category-icon"><i class="fas fa-book"></i></div><h3>References</h3><p class="category-count">9 items</p></div>
+                    </div>
+                    <div class="resources-list" id="resourcesList"></div>
+                </div>
+            </section>
+
+            <section id="notes" class="content-section">
+                <div class="section-header"><div><h1>Notes</h1><p>Capture meetings, ideas, and plans</p></div><button class="btn-primary"><i class="fas fa-plus"></i>New Note</button></div>
+                <div class="notes-container">
+                    <div class="notes-sidebar">
+                        <div class="notes-filter"><button class="filter-btn active" data-filter="all">All Notes</button><button class="filter-btn" data-filter="artists">Artists</button><button class="filter-btn" data-filter="campaigns">Campaigns</button><button class="filter-btn" data-filter="meetings">Meetings</button><button class="filter-btn" data-filter="ideas">Ideas</button></div>
+                        <div class="notes-list" id="notesList"></div>
+                    </div>
+                    <div class="note-editor"><textarea class="text-input" id="noteEditor" rows="10" placeholder="Select or create a note..."></textarea><div class="note-actions"><button class="btn-secondary">Share</button><button class="btn-secondary">Archive</button><button class="btn-primary">Save Note</button></div></div>
+                </div>
+            </section>
+
+            <section id="todos" class="content-section">
+                <div class="section-header"><div><h1>To-Do & Workflows</h1><p>Track tasks across your label</p></div><button class="btn-primary"><i class="fas fa-plus"></i>Add Task</button></div>
+                <div class="kanban-board" id="todoBoard"></div>
+            </section>
+
+            <section id="ai-artist" class="content-section">
+                <div class="section-header"><div><h1>AI Artist Development</h1><p>Generate creative assets with AI</p></div></div>
+                <div class="ai-artist-grid">
+                    <div class="dashboard-card"><h3>AI Song Concepts</h3><textarea id="songConceptInput" class="text-input" rows="4" placeholder="Describe the mood, genre, and inspiration..."></textarea><button class="btn-primary" id="generateSongConceptBtn"><i class="fas fa-magic"></i>Generate Concepts</button><div class="ai-output" id="songConceptOutput"></div></div>
+                    <div class="dashboard-card"><h3>Visual Identity</h3><textarea id="visualIdentityInput" class="text-input" rows="4" placeholder="Describe the visual style you're aiming for..."></textarea><button class="btn-primary" id="generateVisualIdentityBtn"><i class="fas fa-palette"></i>Generate Moodboard</button><div class="ai-output" id="visualIdentityOutput"></div></div>
+                </div>
+            </section>
+
+            <section id="spot-spotter" class="content-section">
+                <div class="section-header"><div><h1>Spot-Spotter</h1><p>Find street marketing locations worldwide</p></div></div>
+                <div class="spot-spotter-grid">
+                    <div class="dashboard-card spot-form">
+                        <h3>Search Locations</h3>
+                        <div class="form-group"><label>Campaign City</label><input type="text" class="text-input" id="spotCity" placeholder="Berlin, Germany"></div>
+                        <div class="form-group"><label>Audience Type</label><select class="select-input" id="spotAudience"><option value="general">General Audience</option><option value="hiphop">Hip-Hop Fans</option><option value="indie">Indie Music Lovers</option><option value="electronic">Electronic Scene</option><option value="pop">Pop Culture</option></select></div>
+                        <div class="form-group"><label>Activation Type</label><select class="select-input" id="spotActivation"><option value="posters">Poster Drop</option><option value="billboards">Billboards</option><option value="street-team">Street Team</option><option value="pop-up">Pop-up Booth</option><option value="projection">Projection Mapping</option></select></div>
+                        <button class="btn-primary" id="spotSearchBtn"><i class="fas fa-search"></i>Find Spots</button>
+                    </div>
+                    <div class="dashboard-card"><h3>Recommended Locations</h3><div id="spotResults" class="spot-results"><div class="empty-state"><i class="fas fa-map-pin"></i><h3>No locations yet</h3><p>Search for a city to see suggestions</p></div></div></div>
+                </div>
+            </section>
+
+            <section id="analytics" class="content-section">
+                <div class="section-header"><div><h1>Analytics</h1><p>Track performance across all channels</p></div><button class="btn-primary"><i class="fas fa-chart-bar"></i>Export Report</button></div>
+                <div class="analytics-grid">
+                    <div class="dashboard-card"><h3>Streaming Growth</h3><canvas id="streamsChart" height="120"></canvas></div>
+                    <div class="dashboard-card"><h3>Audience Geography</h3><div id="geoBreakdown" class="geo-breakdown"></div></div>
+                    <div class="dashboard-card"><h3>Revenue Mix</h3><canvas id="revenueChart" height="120"></canvas></div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <div class="floating-ai" id="floatingAi">
+        <button class="floating-ai-btn"><i class="fas fa-comment-dots"></i></button>
+        <div class="floating-ai-panel" id="floatingAiPanel">
+            <div class="floating-ai-header"><h3>AI Assistant</h3><button class="close-btn" id="closeAiPanel"><i class="fas fa-times"></i></button></div>
+            <div class="floating-ai-body">
+                <div class="chat-messages" id="floatingChatMessages"></div>
+                <div class="chat-input"><input type="text" id="floatingChatInput" placeholder="Ask LabelFlow AI..."><button id="floatingChatSend"><i class="fas fa-paper-plane"></i></button></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="downloadAppModal">
+        <div class="modal-content">
+            <div class="modal-header"><h3>Download LabelFlow</h3><button class="close-modal" data-close="downloadAppModal">&times;</button></div>
+            <div class="modal-body">
+                <p>LabelFlow is available on macOS, Windows, iOS, and Android.</p>
+                <div class="download-options">
+                    <button class="btn-primary"><i class="fab fa-apple"></i> macOS</button>
+                    <button class="btn-primary"><i class="fab fa-windows"></i> Windows</button>
+                    <button class="btn-primary"><i class="fab fa-android"></i> Android</button>
+                    <button class="btn-primary"><i class="fab fa-apple"></i> iOS</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="addContactModal">
+        <div class="modal-content">
+            <div class="modal-header"><h3>Add Contact</h3><button class="close-modal" data-close="addContactModal">&times;</button></div>
+            <div class="modal-body">
+                <div class="form-group"><label>Name</label><input type="text" class="text-input" placeholder="Full name"></div>
+                <div class="form-group"><label>Company</label><input type="text" class="text-input" placeholder="Label, agency, media..."></div>
+                <div class="form-group"><label>Role</label><select class="select-input"><option>Manager</option><option>Promoter</option><option>Radio</option><option>Journalist</option><option>Brand</option></select></div>
+                <div class="form-group"><label>Notes</label><textarea class="text-input" rows="3"></textarea></div>
+                <button class="btn-primary">Save Contact</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="addEventModal">
+        <div class="modal-content">
+            <div class="modal-header"><h3>Add Event</h3><button class="close-modal" data-close="addEventModal">&times;</button></div>
+            <div class="modal-body">
+                <div class="form-group"><label>Event Name</label><input type="text" class="text-input" placeholder="Release, show, milestone..."></div>
+                <div class="form-group"><label>Date</label><input type="date" class="text-input"></div>
+                <div class="form-group"><label>Time</label><input type="time" class="text-input"></div>
+                <div class="form-group"><label>Description</label><textarea class="text-input" rows="3"></textarea></div>
+                <button class="btn-primary">Save Event</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="loading-overlay" id="mockupLoadingOverlay" style="display:none;">
+        <div class="loading-spinner"><i class="fas fa-circle-notch fa-spin"></i><p>Generating mockup...</p></div>
+    </div>
+
+    <div class="notification-tray" id="globalNotifications"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
