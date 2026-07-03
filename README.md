@@ -225,3 +225,8 @@ This project is licensed under the **MIT License** — see [LICENSE](LICENSE) fo
 Built by **[Rhythrosa Labs](https://github.com/RhythrosaLabs)** — crafting tools for independent music creators.
 
 > *"The music industry runs on relationships, creativity, and hustle. LabelFlow powers all three."*
+
+
+## Support
+
+If you find this useful, consider supporting via [PayPal](https://paypal.me/noodlebake)
